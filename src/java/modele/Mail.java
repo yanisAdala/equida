@@ -87,9 +87,4 @@ public class Mail {
         }
         lesPiecesJointes.add(unePiecesJointes);
     }
-    
-    
-    
-    
-    
 }

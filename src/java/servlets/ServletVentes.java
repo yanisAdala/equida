@@ -90,7 +90,7 @@ public class ServletVentes extends HttpServlet {
         {  
             ArrayList<Vente> lesVentes = VenteDAO.getLesVentes(connection);
             
-            System.out.println("VENTE NB" +lesVentes.size() );
+            
             
             
             
