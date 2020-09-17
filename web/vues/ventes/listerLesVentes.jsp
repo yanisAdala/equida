@@ -11,6 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="stylesheet.css" /> 
         
         <title>LISTE DES VENTES</title>
     </head>
@@ -21,13 +22,20 @@
         %>
         <table  class="table table-bordered table-striped table-condensed">  
             <thead>
-                <tr>             
+                <tr>  
+                  
+                    
+                    
                     <th>id</th>
                     <th>nom</th>
                     <th>date début</th>
                     <th>lieu</th>
-                    <th>catégorie</th>  
+                    <th>nbBoxes</th>
+                    <th>Liste des clients</th> 
+                    <th>Liste des mails</th> 
                     <th></th>
+                    
+                   
             <br>
             <br>
                 </tr>
@@ -54,9 +62,13 @@
                         //out.println("<td>");
                         //out.println(uneVente.getUnLieu().getVille());
                         //out.println("</td>");
-
+                        
                         out.println("<td>");
                         out.println(uneVente.getUneCategVente().getLibelle());
+                        out.println("</td>");
+                        
+                        out.println("<td>");
+                        out.println(uneVente.getUnLieu().getNbBoxes());
                         out.println("</td>");
                         
                         out.println("<td><a href ='../ServletVentes/listerLesClients?codeCat="+ uneVente.getUneCategVente().getCode()+ "'>");

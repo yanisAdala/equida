@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import modele.CategVente;
 import modele.Client;
+import modele.Lieu;
 import modele.Pays;
 import modele.Vente;
 import modele.Mail;
@@ -40,7 +41,7 @@ public class VenteDAO {
         try
         {
             //preparation de la requete     
-            requete=connection.prepareStatement("select * from vente, CategVente where codeCategVente=code order by dateDebut desc");          
+            requete=connection.prepareStatement("select * from vente, CategVente, lieu where vente.codeCategVente=categVente.code AND lieu.id = vente.idlieu");          
             //executer la requete
             rs=requete.executeQuery();
             
@@ -57,6 +58,15 @@ public class VenteDAO {
                 
                 uneVente.setUneCategVente(uneCateg);
                 lesVentes.add(uneVente);
+                
+                Lieu unLieu = new Lieu();
+                unLieu.setId(rs.getInt("id"));
+                unLieu.setVille(rs.getString("ville"));
+                unLieu.setCommentaires(rs.getString("commentaires"));
+                 unLieu.setNbBoxes(rs.getString("nbBoxes"));
+                
+                uneVente.setUnLieu(unLieu);
+                
             }
         }   
         catch (SQLException e) 

@@ -89,6 +89,11 @@ public class ServletVentes extends HttpServlet {
         if(url.equals("/EquidaWeb20/ServletVentes/listerLesVentes"))
         {  
             ArrayList<Vente> lesVentes = VenteDAO.getLesVentes(connection);
+            
+            System.out.println("VENTE NB" +lesVentes.size() );
+            
+            
+            
             request.setAttribute("pLesVentes", lesVentes);
             getServletContext().getRequestDispatcher("/vues/ventes/listerLesVentes.jsp").forward(request, response);
         }

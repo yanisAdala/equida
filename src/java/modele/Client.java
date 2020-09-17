@@ -20,8 +20,8 @@ public class Client {
     private String copos ;
     private String ville;
     private String mail;
-    private Pays unPays ;
-    private ArrayList<CategVente> lesCategVentes ;
+    private Pays unPays;
+    private ArrayList<CategVente> lesCategVentes;
 
     public Client() {
     }
